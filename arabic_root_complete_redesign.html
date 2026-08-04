@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Amiri:wght@400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html {
+  width: 100%;
+  background: #f0f0f0 !important;
+  color: #000000 !important;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: #0f2a5e;
+  padding: 40px 24px 36px;
+  text-align: center;
+}
+.hero-title {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 56px !important;
+  font-weight: 700;
+  color: #ffffff !important;
+  line-height: 1.8;
+  display: block;
+}
+.hero-sub {
+  font-size: 30px !important;
+  color: #b8d4f8 !important;
+  margin-top: 10px;
+  display: block;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== SECTION CARD ===== */
+.card {
+  background: #ffffff !important;
+  margin: 18px 14px 0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== SECTION HEADER ===== */
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 24px 18px;
+  flex-direction: row-reverse;
+  border-bottom: 3px solid #eeeeee;
+}
+.badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Amiri', serif;
+  font-size: 40px !important;
+  font-weight: 700;
+  color: #ffffff !important;
+  flex-shrink: 0;
+}
+.card-title {
+  font-size: 40px !important;
+  font-weight: 700;
+  color: #000000 !important;
+  line-height: 1.7;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+/* ===== BODY TEXT ===== */
+.card-body {
+  font-size: 34px !important;
+  color: #111111 !important;
+  line-height: 2.5;
+  padding: 20px 24px 24px;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+/* ===== MNEMONIC BOX ===== */
+.mbox {
+  margin: 0 24px 28px;
+  background: #deeaff;
+  border: 5px solid #0f2a5e;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+}
+.mbox-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 96px !important;
+  color: #0f2a5e !important;
+  font-weight: 700;
+  line-height: 1.6;
+  display: block;
+}
+.mbox-note {
+  font-size: 32px !important;
+  color: #000000 !important;
+  margin-top: 14px;
+  line-height: 2;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  display: block;
+}
+
+/* ===== EXAMPLE ROWS ===== */
+.ex-row {
+  padding: 28px 24px 24px;
+  border-bottom: 4px solid #eeeeee;
+  border-right: 12px solid #cccccc;
+  background: #ffffff !important;
+}
+.ex-row:last-child { border-bottom: none; }
+
+.ex-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 88px !important;
+  color: #000000 !important;
+  font-weight: 700;
+  line-height: 1.4;
+  display: block;
+  text-align: right;
+}
+.ex-root {
+  font-family: 'Amiri', serif;
+  font-size: 72px !important;
+  font-weight: 700;
+  letter-spacing: 10px;
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+.ex-labels {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.lbl {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 30px !important;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: #222222 !important;
+  padding: 10px 24px;
+  border-radius: 14px;
+  line-height: 2;
+  display: inline-block;
+}
+
+/* ===== TAG PILLS (hero area) ===== */
+.tag-row {
+  display: flex; gap: 14px; padding: 0 24px 28px;
+  flex-wrap: wrap; justify-content: flex-end;
+}
+.tag {
+  font-family: 'Amiri', serif;
+  font-size: 34px !important;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 50px;
+  color: #fff !important;
+}
+
+/* ===== TRICKS ===== */
+.trick-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 24px;
+  border-bottom: 4px solid #eeeeee;
+  background: #ffffff !important;
+  flex-direction: row-reverse;
+}
+.trick-row:last-child { border-bottom: none; }
+.trick-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Amiri', serif;
+  font-size: 32px !important; font-weight: 700;
+  color: #fff !important; flex-shrink: 0;
+}
+.trick-body { flex: 1; }
+.trick-title {
+  font-size: 34px !important;
+  font-weight: 700;
+  color: #000000 !important;
+  line-height: 1.9;
+  display: block;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+.trick-ex {
+  font-family: 'Amiri', serif;
+  font-size: 54px !important;
+  font-weight: 700;
+  display: block;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ===== SUMMARY ===== */
+.sum-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 4px solid #eeeeee;
+  background: #ffffff !important;
+  flex-direction: row-reverse;
+}
+.sum-row:last-child { border-bottom: none; }
+.sum-num {
+  width: 66px; height: 66px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Amiri', serif; font-size: 34px !important; font-weight: 700;
+  color: #fff !important; flex-shrink: 0;
+}
+.sum-text {
+  font-size: 32px !important;
+  color: #000000 !important;
+  line-height: 2.4;
+  padding-top: 8px;
+  flex: 1;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+.sum-text b { font-weight: 700; }
+
+.spacer { height: 28px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-title">عربی جذر نکالنے کے اصول</span>
+  <span class="hero-sub">Arabic Root Extraction — مکمل رہنما</span>
+</div>
+
+<!-- 1 جذر کیا ہے -->
+<div class="card" style="margin-top:20px;">
+  <div class="card-head">
+    <div class="badge" style="background:#0f2a5e;">١</div>
+    <div class="card-title">جذر کیا ہے؟</div>
+  </div>
+  <div class="card-body">
+    عربی کے ہر لفظ میں <b>٣ بنیادی حروف</b> چھپے ہوتے ہیں — یہی جذر ہے۔ باقی حروف گرامر کے لیے لگائے جاتے ہیں۔
+  </div>
+  <div class="tag-row">
+    <span class="tag" style="background:#0f2a5e;">ثلاثی ← 3 حروف</span>
+    <span class="tag" style="background:#7c3c00;">رباعی ← 4 حروف</span>
+  </div>
+</div>
+
+<!-- 2 حروف زیادہ -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#166534;">٢</div>
+    <div class="card-title">حروفِ زیادہ یاد کریں</div>
+  </div>
+  <div class="card-body">یہ ١٠ حروف لفظ میں زائد ہو سکتے ہیں:</div>
+  <div class="mbox">
+    <span class="mbox-arabic">سَأَلْتُمُونِيهَا</span>
+    <span class="mbox-note">اس جملے میں وہ تمام ١٠ زائد حروف موجود ہیں</span>
+  </div>
+</div>
+
+<!-- 3 زائد حروف -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#991b1b;">٣</div>
+    <div class="card-title">زائد حروف ہٹانے کی مثالیں</div>
+  </div>
+
+  <div class="ex-row" style="border-right-color:#991b1b;">
+    <span class="ex-arabic">مَكْتَبَة</span>
+    <span class="ex-root" style="color:#991b1b;">ك  ت  ب</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#991b1b;">ہٹایا: م + ة</span>
+      <span class="lbl" style="background:#555555;">م شروع میں، ة آخر میں</span>
+    </div>
+  </div>
+
+  <div class="ex-row" style="border-right-color:#991b1b;">
+    <span class="ex-arabic">مَدْرَسَة</span>
+    <span class="ex-root" style="color:#991b1b;">د  ر  س</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#991b1b;">ہٹایا: م + ة</span>
+      <span class="lbl" style="background:#555555;">م شروع میں، ة آخر میں</span>
+    </div>
+  </div>
+
+  <div class="ex-row" style="border-right-color:#991b1b;">
+    <span class="ex-arabic">اِسْتَغْفَرَ</span>
+    <span class="ex-root" style="color:#991b1b;">غ  ف  ر</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#991b1b;">ہٹایا: ا + س + ت</span>
+      <span class="lbl" style="background:#555555;">استفعل کا وزن</span>
+    </div>
+  </div>
+
+  <div class="ex-row" style="border-right-color:#991b1b;">
+    <span class="ex-arabic">اِنْكَسَرَ</span>
+    <span class="ex-root" style="color:#991b1b;">ك  س  ر</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#991b1b;">ہٹایا: ا + ن</span>
+      <span class="lbl" style="background:#555555;">انفعل کا وزن</span>
+    </div>
+  </div>
+
+  <div class="ex-row" style="border-right-color:#991b1b;">
+    <span class="ex-arabic">أَكْرَمَ</span>
+    <span class="ex-root" style="color:#991b1b;">ك  ر  م</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#991b1b;">ہٹایا: أ</span>
+      <span class="lbl" style="background:#555555;">أفعل کا وزن</span>
+    </div>
+  </div>
+</div>
+
+<!-- 4 حروف علت -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#5b21b6;">٤</div>
+    <div class="card-title">حروفِ علت — کمزور حروف</div>
+  </div>
+  <div class="card-body">
+    <span style="font-family:Amiri,serif;font-size:80px;color:#5b21b6;font-weight:700;display:block;text-align:right;margin-bottom:12px;">و ، ا ، ی</span>
+    یہ اکثر بدل جاتے یا چھپ جاتے ہیں:
+  </div>
+
+  <div class="ex-row" style="border-right-color:#5b21b6;">
+    <span class="ex-arabic">وَعَدَ</span>
+    <span class="ex-root" style="color:#5b21b6;">و  ع  د</span>
+    <div class="ex-labels"><span class="lbl" style="background:#5b21b6;">مثال — و موجود ہے</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#5b21b6;">
+    <span class="ex-arabic">قَالَ</span>
+    <span class="ex-root" style="color:#5b21b6;">ق  و  ل</span>
+    <div class="ex-labels"><span class="lbl" style="background:#5b21b6;">اجوف — درمیانی و چھپی</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#5b21b6;">
+    <span class="ex-arabic">بَاعَ</span>
+    <span class="ex-root" style="color:#5b21b6;">ب  ي  ع</span>
+    <div class="ex-labels"><span class="lbl" style="background:#5b21b6;">اجوف — درمیانی ی چھپی</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#5b21b6;">
+    <span class="ex-arabic">دَعَا</span>
+    <span class="ex-root" style="color:#5b21b6;">د  ع  و</span>
+    <div class="ex-labels"><span class="lbl" style="background:#5b21b6;">ناقص — آخر کی و بدلی</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#5b21b6;">
+    <span class="ex-arabic">رَمَى</span>
+    <span class="ex-root" style="color:#5b21b6;">ر  م  ي</span>
+    <div class="ex-labels"><span class="lbl" style="background:#5b21b6;">ناقص — آخر کی ی بدلی</span></div>
+  </div>
+</div>
+
+<!-- 5 تشدید -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#9d174d;">٥</div>
+    <div class="card-title">تشدید = دو حروف</div>
+  </div>
+  <div class="card-body">جب کسی حرف پر <b style="color:#9d174d;">تشدید (ّ)</b> ہو تو جذر میں دو بار لکھیں:</div>
+
+  <div class="ex-row" style="border-right-color:#9d174d;">
+    <span class="ex-arabic">مَدَّ</span>
+    <span class="ex-root" style="color:#9d174d;">م  د  د</span>
+    <div class="ex-labels"><span class="lbl" style="background:#9d174d;">د پر تشدید = دو د</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#9d174d;">
+    <span class="ex-arabic">حَلَّ</span>
+    <span class="ex-root" style="color:#9d174d;">ح  ل  ل</span>
+    <div class="ex-labels"><span class="lbl" style="background:#9d174d;">ل پر تشدید = دو ل</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#9d174d;">
+    <span class="ex-arabic">رَدَّ</span>
+    <span class="ex-root" style="color:#9d174d;">ر  د  د</span>
+    <div class="ex-labels"><span class="lbl" style="background:#9d174d;">د پر تشدید = دو د</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#9d174d;">
+    <span class="ex-arabic">أَحَبَّ</span>
+    <span class="ex-root" style="color:#9d174d;">ح  ب  ب</span>
+    <div class="ex-labels"><span class="lbl" style="background:#9d174d;">ب پر تشدید = دو ب</span></div>
+  </div>
+</div>
+
+<!-- 6 اوزان -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#166534;">٦</div>
+    <div class="card-title">اوزان سے جذر نکالیں</div>
+  </div>
+  <div class="card-body">وزن کی بنیاد <b style="color:#166534;">ف ع ل</b> ہے — جو حروف ف، ع، ل کی جگہ آئیں وہی جذر ہیں:</div>
+
+  <div class="ex-row" style="border-right-color:#166534;">
+    <span class="ex-arabic">كَتَبَ</span>
+    <span class="ex-root" style="color:#166534;">ك  ت  ب</span>
+    <div class="ex-labels"><span class="lbl" style="background:#166534;">وزن: فَعَلَ</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#166534;">
+    <span class="ex-arabic">دَرَّسَ</span>
+    <span class="ex-root" style="color:#166534;">د  ر  س</span>
+    <div class="ex-labels"><span class="lbl" style="background:#166534;">وزن: فَعَّلَ</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#166534;">
+    <span class="ex-arabic">أَكْرَمَ</span>
+    <span class="ex-root" style="color:#166534;">ك  ر  م</span>
+    <div class="ex-labels"><span class="lbl" style="background:#166534;">وزن: أَفْعَلَ</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#166534;">
+    <span class="ex-arabic">اِسْتَغْفَرَ</span>
+    <span class="ex-root" style="color:#166534;">غ  ف  ر</span>
+    <div class="ex-labels"><span class="lbl" style="background:#166534;">وزن: اِسْتَفْعَلَ</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#166534;">
+    <span class="ex-arabic">كَاتِب</span>
+    <span class="ex-root" style="color:#166534;">ك  ت  ب</span>
+    <div class="ex-labels"><span class="lbl" style="background:#166534;">وزن: فَاعِل</span></div>
+  </div>
+  <div class="ex-row" style="border-right-color:#166534;">
+    <span class="ex-arabic">مَكْتُوب</span>
+    <span class="ex-root" style="color:#166534;">ك  ت  ب</span>
+    <div class="ex-labels"><span class="lbl" style="background:#166534;">وزن: مَفْعُول</span></div>
+  </div>
+</div>
+
+<!-- 7 ٹرکس -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#b45309;">★</div>
+    <div class="card-title">اہم ٹرکس اور ٹپس</div>
+  </div>
+
+  <div class="trick-row">
+    <div class="trick-icon" style="background:#7c3c00;">م</div>
+    <div class="trick-body">
+      <span class="trick-title" style="color:#7c3c00;">م سے شروع ہو — م زائد ہے</span>
+      <span class="trick-ex" style="color:#7c3c00;">مَكْتَبَة ← ك ت ب</span>
+    </div>
+  </div>
+  <div class="trick-row">
+    <div class="trick-icon" style="background:#4c1d95;">ة</div>
+    <div class="trick-body">
+      <span class="trick-title" style="color:#4c1d95;">آخر میں ة ہو — ہمیشہ زائد</span>
+      <span class="trick-ex" style="color:#4c1d95;">مَدْرَسَة ← د ر س</span>
+    </div>
+  </div>
+  <div class="trick-row">
+    <div class="trick-icon" style="background:#064e3b; font-size:20px !important;">است</div>
+    <div class="trick-body">
+      <span class="trick-title" style="color:#064e3b;">اِسْتَ سے شروع — تینوں زائد</span>
+      <span class="trick-ex" style="color:#064e3b;">اِسْتَغْفَرَ ← غ ف ر</span>
+    </div>
+  </div>
+  <div class="trick-row">
+    <div class="trick-icon" style="background:#881337;">ّ</div>
+    <div class="trick-body">
+      <span class="trick-title" style="color:#881337;">تشدید ہو — دو بار لکھو</span>
+      <span class="trick-ex" style="color:#881337;">مَدَّ ← م د د</span>
+    </div>
+  </div>
+  <div class="trick-row">
+    <div class="trick-icon" style="background:#1e3a8a;">ا</div>
+    <div class="trick-body">
+      <span class="trick-title" style="color:#1e3a8a;">آخر میں ا یا ى — اصل حرف و یا ی</span>
+      <span class="trick-ex" style="color:#1e3a8a;">رَمَى ← ر م ي</span>
+    </div>
+  </div>
+  <div class="trick-row">
+    <div class="trick-icon" style="background:#14532d;">٣</div>
+    <div class="trick-body">
+      <span class="trick-title" style="color:#14532d;">تین حروف کا اصول</span>
+      <span class="trick-title" style="color:#333333; font-size:30px !important;">جذر ہمیشہ ٣ حروف — زیادہ بچیں تو کوئی زائد رہا</span>
+    </div>
+  </div>
+</div>
+
+<!-- 8 خلاصہ -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#0f2a5e;">✓</div>
+    <div class="card-title">خلاصہ — آسان ترتیب</div>
+  </div>
+  <div class="sum-row">
+    <div class="sum-num" style="background:#0f2a5e;">١</div>
+    <div class="sum-text">آخر سے <b style="color:#0f2a5e;">ة، ون، ین، ات</b> ہٹائیں</div>
+  </div>
+  <div class="sum-row">
+    <div class="sum-num" style="background:#7c3c00;">٢</div>
+    <div class="sum-text">شروع سے <b style="color:#7c3c00;">م، ت، أ، است، ان</b> ہٹائیں</div>
+  </div>
+  <div class="sum-row">
+    <div class="sum-num" style="background:#5b21b6;">٣</div>
+    <div class="sum-text">تشدید ہو تو <b style="color:#5b21b6;">وہ حرف دہرا لکھیں</b></div>
+  </div>
+  <div class="sum-row">
+    <div class="sum-num" style="background:#064e3b;">٤</div>
+    <div class="sum-text">کمزور حروف <b style="color:#064e3b;">و، ا، ی</b> واپس لائیں</div>
+  </div>
+  <div class="sum-row">
+    <div class="sum-num" style="background:#166534;">٥</div>
+    <div class="sum-text">تین حروف بچیں — <b style="color:#166534;">یہی جذر ہے ✓</b></div>
+  </div>
+</div>
+
+<!-- 9 مشق -->
+<div class="card">
+  <div class="card-head">
+    <div class="badge" style="background:#0f2a5e;">✎</div>
+    <div class="card-title">مشق — جذر پہچانیں</div>
+  </div>
+
+  <div class="ex-row">
+    <span class="ex-arabic">مُسْلِم</span>
+    <span class="ex-root" style="color:#0f2a5e;">س  ل  م</span>
+    <div class="ex-labels"><span class="lbl" style="background:#0f2a5e;">م زائد</span></div>
+  </div>
+  <div class="ex-row">
+    <span class="ex-arabic">مُعَلِّمَة</span>
+    <span class="ex-root" style="color:#0f2a5e;">ع  ل  م</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#0f2a5e;">م + ة زائد</span>
+      <span class="lbl" style="background:#555;">تشدید = دہرا</span>
+    </div>
+  </div>
+  <div class="ex-row">
+    <span class="ex-arabic">مَكْتُوب</span>
+    <span class="ex-root" style="color:#0f2a5e;">ك  ت  ب</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#0f2a5e;">م زائد</span>
+      <span class="lbl" style="background:#555;">و وزن میں</span>
+    </div>
+  </div>
+  <div class="ex-row">
+    <span class="ex-arabic">اِجْتِمَاع</span>
+    <span class="ex-root" style="color:#0f2a5e;">ج  م  ع</span>
+    <div class="ex-labels"><span class="lbl" style="background:#0f2a5e;">ا + ت زائد</span></div>
+  </div>
+  <div class="ex-row">
+    <span class="ex-arabic">يَقُولُ</span>
+    <span class="ex-root" style="color:#0f2a5e;">ق  و  ل</span>
+    <div class="ex-labels">
+      <span class="lbl" style="background:#0f2a5e;">ی زائد</span>
+      <span class="lbl" style="background:#555;">اجوف</span>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+</body>
+</html>
